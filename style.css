@@ -84,6 +84,20 @@ p {
 img {
   flex: 1;
   width: 2rem;
+  position: relative;
+  animation: bounce 0.9s infinite alternate;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    top: 0;
+    animation-timing-function: ease-in;
+  }
+  50% {
+    top: 1rem;
+    animation-timing-function: ease-out;
+  }
 }
 
 /* Layout */
@@ -101,6 +115,7 @@ header {
   align-items: center;
   justify-content: center;
   background-image: url("flare.png");
+  background-position: 0 56.25rem;
   background-size: cover;
   color: var(--accent);
   height: 40vh;
@@ -187,7 +202,8 @@ footer {
 
   .footer-content {
     display: flex;
-    flex-direction: column;
+    gap: var(--space-xl);
+    text-align: left;
     align-items: center;
     justify-content: center;
     color: var(--dark-bg);
@@ -195,6 +211,10 @@ footer {
 
   .footer-info {
     padding: var(--space-sm) 0;
+  }
+
+  .footer-contact {
+    text-align: left;
   }
 
   .footer-info > *,
@@ -231,13 +251,18 @@ footer {
   .approachSection ol {
     max-width: 80%;
     margin: 0 auto;
+    text-align: left;
   }
 }
 
 /* ===== Media Queries (Desktop) ===== */
 @media (min-width: 1024px) {
+  img {
+    width: 4rem;
+  }
   header {
     height: 110vh;
+    background-position: 0;
 
     .headerTitle {
       font-size: 7rem;
@@ -263,26 +288,7 @@ footer {
   }
 
   .helpSection {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-lg);
     margin: 0 auto;
+    width: 100%;
   }
-}
-
-/* ===== Utility Classes ===== */
-.text-center {
-  text-align: center;
-}
-.mb-sm {
-  margin-bottom: var(--space-sm);
-}
-.mb-md {
-  margin-bottom: var(--space-md);
-}
-.mb-lg {
-  margin-bottom: var(--space-lg);
-}
-.mb-xl {
-  margin-bottom: var(--space-xl);
 }
