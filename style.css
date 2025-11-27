@@ -9,7 +9,7 @@
   /* Colors */
   --primary: #333; /* Dark text */
   --secondary: #666; /* Lighter text */
-  --accent: #ff6b35; /* Orange accent */
+  --accent: #fff9f0; /* slightly lighter than papayawhip */
   --light-bg: #f9f9f9; /* Light background */
   --dark-bg: #1a1a1a; /* Dark background */
   --white: #ffffff;
@@ -19,15 +19,15 @@
   --space-sm: 1rem;
   --space-md: 1.5rem;
   --space-lg: 2rem;
-  --space-xl: 3rem;
+  --space-xl: 5rem;
 
   /* Typography */
   --font-base: 1rem;
   --font-sm: 0.875rem;
   --font-md: 1.25rem;
   --font-lg: 1.5rem;
-  --font-xl: 2rem;
-  --font-xxl: 2.5rem;
+  --font-xl: 2.5rem;
+  --font-xxl: 3.5rem;
 }
 
 /* ===== Base Styles (Mobile First) ===== */
@@ -61,16 +61,23 @@ h1 {
   font-size: var(--font-xxl);
 }
 h2 {
+  color: var(--accent);
+
   font-size: var(--font-xl);
 }
 h3 {
+  color: var(--accent);
+
   font-size: var(--font-lg);
 }
 h4 {
+  color: var(--accent);
+
   font-size: var(--font-md);
 }
 p {
   margin-bottom: var(--space-sm);
+  text-align: center;
 }
 
 /* Layout */
@@ -83,10 +90,36 @@ p {
 
 /* Header */
 header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: var(--dark-bg);
-  color: var(--white);
+  color: var(--accent);
+
   padding: var(--space-xl) 0;
   text-align: center;
+
+  .headerTitle {
+    color: var(--accent);
+
+    font-size: var(--font-lg);
+
+    p {
+      font-size: 1px;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      font-size: var(--font-sm);
+    }
+  }
 }
 
 /* Main Content */
@@ -95,12 +128,17 @@ section {
   padding: var(--space-xl) 0;
 }
 
+.description {
+  background-color: var(--accent);
+  padding: var(--space-xl) var(--space-md);
+}
+
 /* Mission Section */
 .missionSection {
   background-color: var(--dark-bg);
-  color: var(--white);
+  color: var(--accent);
   text-align: center;
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-sm) var(--space-md);
 }
 
 /* Approach Section */
@@ -117,6 +155,11 @@ section {
 .approachSection li {
   margin-bottom: var(--space-md);
   padding-left: var(--space-sm);
+}
+
+.helpSection {
+  background-color: var(--dark-bg);
+  color: var(--accent);
 }
 
 /* How You Can Help Section */
@@ -158,7 +201,15 @@ footer {
 /* ===== Media Queries (Desktop) ===== */
 @media (min-width: 1024px) {
   header {
-    height: 100vh;
+    height: 110vh;
+
+    .headerTitle {
+      font-size: 7rem;
+
+      p {
+        font-size: var(--font-xl);
+      }
+    }
   }
 
   .container {
@@ -179,7 +230,6 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-lg);
-    max-width: 1200px;
     margin: 0 auto;
   }
 }
