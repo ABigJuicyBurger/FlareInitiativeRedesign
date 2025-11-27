@@ -23,7 +23,7 @@
 
   /* Typography */
   --font-base: 1rem;
-  --font-sm: 0.875rem;
+  --font-sm: 1rem;
   --font-md: 1.25rem;
   --font-lg: 1.5rem;
   --font-xl: 2.5rem;
@@ -63,7 +63,7 @@ h1 {
 h2 {
   color: var(--accent);
 
-  font-size: var(--font-lg);
+  font-size: var(--font-xl);
 }
 h3 {
   color: var(--accent);
@@ -197,34 +197,40 @@ section > div {
 footer {
   background-color: var(--accent);
   color: var(--white);
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-md) 0;
   text-align: center;
-
-  .footer-content {
-    display: flex;
-    gap: var(--space-xl);
-    text-align: left;
-    align-items: center;
-    justify-content: center;
-    color: var(--dark-bg);
-  }
-
-  .footer-info {
-    padding: var(--space-sm) 0;
-  }
-
-  .footer-contact {
-    text-align: left;
-  }
-
-  .footer-info > *,
-  .footer-contact > * {
-    margin: 0;
-  }
 
   h2 {
     color: var(--dark-bg);
   }
+
+  a {
+    color: orange;
+  }
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--dark-bg);
+  margin: 0 auto;
+}
+
+.footer-contact,
+.footer-info {
+  text-align: center;
+}
+
+.footer-info {
+  padding: var(--space-sm) 0;
+}
+
+.footer-info > *,
+.footer-contact > * {
+  margin: 0;
 }
 
 /* ===== Media Queries (Tablet and up) ===== */
@@ -252,6 +258,24 @@ footer {
     max-width: 80%;
     margin: 0 auto;
     text-align: left;
+  }
+
+  footer {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .footer-content {
+    flex-direction: row;
+    max-width: 75rem;
+    gap: var(--space-xl);
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-contact,
+  .footer-info {
+    text-align: center;
   }
 }
 
