@@ -80,6 +80,11 @@ p {
   text-align: center;
 }
 
+img {
+  flex: 1;
+  width: 2rem;
+}
+
 /* Layout */
 .container {
   width: 100%;
@@ -96,8 +101,7 @@ header {
   justify-content: center;
   background-color: var(--dark-bg);
   color: var(--accent);
-
-  padding: var(--space-xl) 0;
+  height: 40vh;
   text-align: center;
 
   .headerTitle {
@@ -118,6 +122,10 @@ header {
 
     p {
       font-size: var(--font-sm);
+    }
+
+    img {
+      flex: 1;
     }
   }
 }
@@ -180,6 +188,10 @@ footer {
   :root {
     --font-base: 1.1rem;
     --font-xxl: 3rem;
+  }
+
+  img {
+    size: 4rem;
   }
 
   .container {
